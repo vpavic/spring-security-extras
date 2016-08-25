@@ -29,9 +29,9 @@ public class ExpiredCredentialsRedirectFilter extends GenericFilterBean {
 	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
 	public ExpiredCredentialsRedirectFilter(String expiredCredentialsUrl) {
-		Assert.hasLength(expiredCredentialsUrl, "expiredCredentialsUrl must be specified");
+		Assert.hasLength(expiredCredentialsUrl, "expiredCredentialsUrl must not be empty");
 		Assert.isTrue(UrlUtils.isValidRedirectUrl(expiredCredentialsUrl),
-				expiredCredentialsUrl + " isn't a valid redirect URL");
+				expiredCredentialsUrl + " is not a valid redirect URL");
 		this.expiredCredentialsUrl = expiredCredentialsUrl;
 		this.requestMatcher = new RegexRequestMatcher(expiredCredentialsUrl, null);
 	}
