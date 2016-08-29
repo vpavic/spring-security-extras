@@ -22,11 +22,11 @@ import org.springframework.web.filter.GenericFilterBean;
 
 public class ExpiredCredentialsRedirectFilter extends GenericFilterBean {
 
-	private String expiredCredentialsUrl;
+	private final String expiredCredentialsUrl;
 
-	private RequestMatcher requestMatcher;
+	private final RequestMatcher requestMatcher;
 
-	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+	private final RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
 	public ExpiredCredentialsRedirectFilter(String expiredCredentialsUrl) {
 		Assert.hasLength(expiredCredentialsUrl, "expiredCredentialsUrl must not be empty");
