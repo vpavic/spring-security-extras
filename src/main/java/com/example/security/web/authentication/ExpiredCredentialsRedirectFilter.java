@@ -33,7 +33,7 @@ public class ExpiredCredentialsRedirectFilter extends GenericFilterBean {
 		Assert.isTrue(UrlUtils.isValidRedirectUrl(expiredCredentialsUrl),
 				expiredCredentialsUrl + " is not a valid redirect URL");
 		this.expiredCredentialsUrl = expiredCredentialsUrl;
-		this.requestMatcher = new RegexRequestMatcher(expiredCredentialsUrl, null);
+		this.requestMatcher = new RegexRequestMatcher(expiredCredentialsUrl.replace("?", "\\?"), null);
 	}
 
 	@Override
