@@ -1,6 +1,17 @@
 # Gradle
-.gradle
-build
+.gradle/
+build/
 
-# IDEA
-.idea
+# IntelliJ IDEA
+.idea/
+out/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+bin/
+.classpath
+.project
+.settings
+.springBeans
