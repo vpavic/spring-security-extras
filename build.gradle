@@ -1,18 +1,20 @@
 apply plugin: 'java'
 
 sourceCompatibility = '1.6'
-targetCompatibility = '1.6'
 
 repositories {
 	jcenter()
 }
 
-dependencies {
-	compile 'org.springframework:spring-web:3.2.17.RELEASE'
-	compile 'org.springframework.security:spring-security-web:3.2.9.RELEASE'
+ext {
+	springSecurityVersion = '4.2.3.RELEASE'
+}
 
-	compileOnly 'javax.servlet:javax.servlet-api:3.0.1'
+dependencies {
+	compile "org.springframework.security:spring-security-web:$springSecurityVersion"
+
+	compileOnly 'javax.servlet:javax.servlet-api:3.1.0'
 
 	testCompile 'junit:junit:4.12'
-	testCompile 'org.springframework:spring-test:3.2.17.RELEASE'
+	testCompile "org.springframework.security:spring-security-test:$springSecurityVersion"
 }
